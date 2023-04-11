@@ -7,14 +7,12 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selected_fruit = 'Banana';
-  title = 'testang';
+  selected_city= 'Edmonton';
 
   constructor(private appService: AppService) {}
   
   onChange(value: any) {
-      this.selected_fruit = value.target.value;
-      		// API Call
+    this.selected_city = value.target.value;
 
 		this.appService.getData().
       subscribe( {
