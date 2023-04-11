@@ -7,12 +7,12 @@ import { Response } from '../models/response';
   providedIn: 'root'
 })
 export class AppService {
-  linkToApi: string = 'http://api.weatherapi.com/v1/forecast.json?key=81b5e3a9fbd041a587975853231104&q=Edmonton&days=3&aqi=no&alerts=no';
+  linkToApi: string = 'http://api.weatherapi.com/v1/forecast.json?key=81b5e3a9fbd041a587975853231104&days=3&aqi=no&alerts=no&q=';
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<Response> {
-    return this.http.get<Response>(this.linkToApi);
+  getData(city: string): Observable<Response> {
+    return this.http.get<Response>(this.linkToApi+city);
   }
 
 }

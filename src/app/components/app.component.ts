@@ -14,7 +14,7 @@ export class AppComponent {
   onChange(value: any) {
     this.selected_city = value.target.value;
 
-		this.appService.getData().
+		this.appService.getData(value.target.value).
       subscribe( {
         next: (item) => console.log(
           item.location.country+"/"
