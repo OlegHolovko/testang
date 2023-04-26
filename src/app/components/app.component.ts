@@ -24,5 +24,14 @@ export class AppComponent {
         ),
         error: (err) => console.log('err: ', err)
       }); 
+
+
+      this.appService.getData2(value.target.value).
+      subscribe( {
+        next: (item2) => console.log("Spring:"+
+          item2.name
+        ),
+        error: (err) => console.log('err: ', err)
+      }); 
   }
 }
